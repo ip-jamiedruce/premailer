@@ -1,5 +1,10 @@
 # Premailer README [![Build Status](https://travis-ci.org/premailer/premailer.png?branch=master)](https://travis-ci.org/premailer/premailer)
 
+## Changes Introduced
+
+This fork adds additional comandline options as per the main application
+
+
 ## What is this?
 
 For the best HTML e-mail delivery results, CSS should be inline. This is a 

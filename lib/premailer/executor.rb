@@ -7,7 +7,23 @@ options = {
   :link_query_string => nil,
   :remove_classes => false,
   :verbose => false,
-  :line_length => 65
+  :line_length => 65,
+  :css_to_attributes => false,
+  #:remove_ids => false,
+  #:remove_comments => false,
+  #:reset_contenteditable => true,
+  #:css_to_attributes => true,
+  #:css_string => nil,
+  #:preserve_styles => false,
+  #:preserve_reset => true,
+  #:debug => false,
+  #:include_link_tags => true,
+  #:include_style_tags => true,
+  #:input_encoding => 'ASCII-8BIT',
+  #:replace_html_entities => false,
+  #:escape_url_attributes => true,
+  #:unescaped_ampersand => false,
+  #:create_shorthands => true
 }
 
 mode = :html
@@ -40,6 +56,10 @@ opts = OptionParser.new do |opts|
     options[:css] = v
   end
 
+  opts.on("--cssattr", "Copy related CSS attributes into HTML attribute") do |v|
+    options[:css_to_attributes] = v
+  end
+
   opts.on("-r", "--remove-classes", "Remove HTML classes") do |v|
     options[:remove_classes] = v
   end
@@ -70,7 +90,7 @@ opts = OptionParser.new do |opts|
   end
 
   opts.on_tail("-V", "--version", "Show version") do
-    puts "Premailer #{Premailer::VERSION} (c) 2008-2010 Alex Dunae"
+    puts "Premailer #{Premailer::VERSION} (c) 2008-2010 Alex Dunae, Jamie Druce"
     exit
   end
 end
